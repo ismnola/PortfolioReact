@@ -1,0 +1,2 @@
+npm create vite@latest portfolioreact --template react  	
+$ npm create vite@latest port-vue -- --template vue

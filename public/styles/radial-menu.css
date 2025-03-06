@@ -1,0 +1,74 @@
+#menu {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -150px 0 0 -150px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease;
+}
+
+/* Bouton central avec la croix */
+.menu-center {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.menu-center:hover {
+  background-color: darkred;
+}
+
+/* Items du menu */
+.menu-item {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -35px 0 0 -35px;
+  border-radius: 50%;
+  background-color: #424242;
+  transform-origin: center center;
+  transition: transform 500ms ease, opacity 0.3s;
+}
+
+.menu-item a {
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Animation du menu */
+#menu.scale-100 .menu-item:nth-child(2) {
+  transform: rotate(0deg) translateY(-130px) rotate(0deg);
+}
+
+#menu.scale-100 .menu-item:nth-child(3) {
+  transform: rotate(90deg) translateY(-130px) rotate(-90deg);
+}
+
+#menu.scale-100 .menu-item:nth-child(4) {
+  transform: rotate(180deg) translateY(-130px) rotate(-180deg);
+}
+
+#menu.scale-100 .menu-item:nth-child(5) {
+  transform: rotate(270deg) translateY(-130px) rotate(-270deg);
+}

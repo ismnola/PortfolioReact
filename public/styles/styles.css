@@ -1,0 +1,78 @@
+main {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.parallax {
+    pointer-events: none;
+    position: absolute;
+    transition: 0.45s cubic-bezier(.2,.49,.32,.99);
+}
+
+.bg-2, .bg-3 {
+    position: absolute;
+    width: 100%;  /* Adapte la largeur à l'écran */
+    height: 100%; /* Adapte la hauteur à l'écran */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrer les images */
+    z-index: 1;
+    object-fit: cover; /* S'assure que l'image couvre l'espace sans déformation */
+}
+
+.bg-1 {
+    z-index: 1;
+    position: absolute;
+    width: 130%;  /* Adapte la largeur à l'écran */
+    height: 130%; /* Adapte la hauteur à l'écran */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrer les images */
+    z-index: 1;
+    object-fit: cover; /* S'assure que l'image couvre l'espace sans déformation */
+}
+
+.bg-2 {
+    z-index: 2;
+    top: calc(50% + 200px);
+}
+
+.bg-3 {
+    z-index: 3;
+    top: calc(50% + 600px);
+}
+
+.text {
+    position: absolute;
+    z-index: 4;
+    top: 28%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-transform: uppercase;
+    color: #333;
+}
+
+.text h1 {
+    font-weight: 600;
+    font-size: 8rem;
+}
+
+.text h2 {
+    font-weight: 100;
+    font-size: 4rem;
+}
+
+img {
+    all: unset;
+    display: block;
+    max-width: none;
+}
+
+img {
+    width: 100vw;  /* 100% de la largeur de l'écran */
+    height: 100vh; /* 100% de la hauteur de l'écran */
+    object-fit: cover; /* Coupe l’image pour remplir l’espace sans la déformer */
+}
