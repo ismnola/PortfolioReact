@@ -1,52 +1,59 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const RadialMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Fonction pour basculer l'état du menu
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
+  // Animation des éléments du menu radial
+  const itemVariants = {
+    open: (index) => ({
+      opacity: 1,
+      scale: 1,
+      x: 100 * Math.cos((index * 2 * Math.PI) / 4),
+      y: 100 * Math.sin((index * 2 * Math.PI) / 4),
+      transition: { delay: index * 0.1, type: "spring", stiffness: 100 },
+    }),
+    closed: {
+      opacity: 0,
+      scale: 0,
+      x: 0,
+      y: 0,
+      rotate: 0, // Retour à la position de départ
+      transition: { type: "spring", stiffness: 200 },
+    },
   };
 
   return (
     <>
       <link rel="stylesheet" href="/styles/radial-menu.css" />
-      <div className="relative flex items-center justify-center min-h-screen bg-gradient-to-t from-pink-400 via-red-300 to-yellow-200">
-        
-        {/* Bouton principal (menu fermé) */}
-        {!isOpen && (
-          <a
-            onClick={toggleMenu}
-            className="absolute w-32 h-32 bg-gray-800 rounded-full text-white text-4xl flex items-center justify-center transition-all duration-300 z-10"
-            title="Show navigation"
-          >
-            <span className="fas fa-share-alt"></span>
-          </a>
-        )}
-
-        {/* Menu circulaire */}
-        <ul
-          id="menu"
-          className={`absolute flex items-center justify-center w-[300px] h-[300px] transition-transform duration-500 ${
-            isOpen ? "scale-100 z-20" : "scale-0 z-0"
-          }`}
+      <div className="relative flex items-center justify-center min-h-screen bg-gray-900">
+        {/* Menu radial */}
+        <motion.ul
+          initial={false}
+          animate={isOpen ? "open" : "closed"}
+          className="absolute flex items-center justify-center w-64 h-64"
         >
-          {/* Bouton pour fermer le menu (croix) */}
-          <li
-            className="menu-center absolute w-20 h-20 bg-red-600 text-white flex items-center justify-center rounded-full"
-            onClick={toggleMenu}
-          >
-            <span className="fas fa-times text-3xl"></span>
-          </li>
+          {["🏠", "📧", "⭐", "⚙️"].map((icon, index) => (
+            <motion.li
+              key={index}
+              custom={index}
+              variants={itemVariants}
+              className="absolute w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg cursor-pointer z-20 hover:bg-gray-200"
+            >
+              {icon}
+            </motion.li>
+          ))}
+        </motion.ul>
 
-          {/* Icônes du menu radial */}
-          <li className="menu-item">
-            <a href="Home"><span className="fab fa-github"></span></a>
-          </li>
-          <li className="menu-item">
-            <a href="#"><span className="fab fa-facebook"></span></a>
-          </li>
-        </ul>
+        {/* Bouton hamburger placé au centre */}
+        <div
+          onClick={() => setIsOpen(!isOpen)}
+          className={`ham-menu ${isOpen ? "active" : ""}`}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </>
   );

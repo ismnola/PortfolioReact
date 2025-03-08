@@ -30,15 +30,15 @@ function ParallaxPage() {
     <>
       <link rel="stylesheet" href="/styles/styles.css" />
       <main id="mont" className="relative w-full h-screen overflow-hidden">
-        <img src="./public/images/bg.webp" data-speedx="0.3" data-speedy="0.2" className="parallax bg-1" />
-        <img src="./public/images/2p.webp" data-speedx="0.2" data-speedy="0.1" className="parallax bg-2" />
+        <img src="/images/bg.webp" data-speedx="0.3" data-speedy="0.2" className="parallax bg-1" />
+        <img src="/images/2p.webp" data-speedx="0.2" data-speedy="0.1" className="parallax bg-2" />
 
         {/* Section Texte avec effet Parallax */}
         <div className="parallax absolute z-10 top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-grey uppercase">
           <h1 className="font-semibold text-6xl md:text-8xl">Portfolio</h1>
           <h2 className="font-light text-3xl md:text-4xl">PUNU Ismael</h2>
         </div>
-        <img src="./public/images/1p.webp" data-speedx="0.1" data-speedy="0.05" className="parallax bg-3" />
+        <img src="/images/1p.webp" data-speedx="0.1" data-speedy="0.05" className="parallax bg-3" />
         {/* Menu circulaire */}
             <CircularMenu />
       </main>

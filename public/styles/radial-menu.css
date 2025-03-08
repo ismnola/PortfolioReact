@@ -1,74 +1,51 @@
-#menu {
-  width: 300px;
-  height: 300px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin: -150px 0 0 -150px;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.5s ease;
-}
-
-/* Bouton central avec la croix */
-.menu-center {
-  position: absolute;
+.ham-menu {
+  height: 50px;
   width: 80px;
-  height: 80px;
-  background-color: red;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: .25rem;
+  position: relative;
   cursor: pointer;
-  z-index: 10;
-  transition: background 0.3s;
+  z-index: 20;
 }
 
-.menu-center:hover {
-  background-color: darkred;
+.ham-menu:hover span {
+  background-color: white;
 }
 
-/* Items du menu */
-.menu-item {
-  width: 70px;
-  height: 70px;
+.ham-menu span {
   position: absolute;
-  left: 50%;
   top: 50%;
-  margin: -35px 0 0 -35px;
-  border-radius: 50%;
-  background-color: #424242;
-  transform-origin: center center;
-  transition: transform 500ms ease, opacity 0.3s;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 5px;
+  width: 70%;
+  border-radius: 1rem;
+  background-color: rgb(197, 197, 197);
+  transition: .2s ease;
 }
 
-.menu-item a {
-  color: #fff;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
+.ham-menu span:nth-child(1) {    
+  top: 25%;
+}
+.ham-menu span:nth-child(2) {    
+}
+.ham-menu span:nth-child(3) {    
+top: 75%;
 }
 
-/* Animation du menu */
-#menu.scale-100 .menu-item:nth-child(2) {
-  transform: rotate(0deg) translateY(-130px) rotate(0deg);
+.ham-menu.active span {
+  background-color: white;
 }
 
-#menu.scale-100 .menu-item:nth-child(3) {
-  transform: rotate(90deg) translateY(-130px) rotate(-90deg);
+.ham-menu.active span:nth-child(1){
+  transform: translate(-50%, -50%) rotate(-45deg);
+  top: 50%;
+  width: 50%;
 }
-
-#menu.scale-100 .menu-item:nth-child(4) {
-  transform: rotate(180deg) translateY(-130px) rotate(-180deg);
+.ham-menu.active span:nth-child(2){
+  opacity: 0;
 }
-
-#menu.scale-100 .menu-item:nth-child(5) {
-  transform: rotate(270deg) translateY(-130px) rotate(-270deg);
+.ham-menu.active span:nth-child(3){
+  transform: translate(-50%, -50%) rotate(45deg);
+  top: 50%;
+  width: 50%;
 }
