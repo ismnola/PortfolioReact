@@ -3,12 +3,11 @@ import ThemeToggle from "../components/ThemeToggle"; // Importation du composant
 
 export default function Info() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-white p-8">
+<div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-white p-8">
       {/* En-tête */}
       <header className="text-center mb-12">
-        <h1 className="text-4xl font-bold">Mon Parcours en Informatique</h1>
-        <p className="mt-4 text-lg">Je suis passionné par l'informatique et cherche constamment à améliorer mes compétences techniques et mes connaissances dans ce domaine pour résoudre des problèmes complexes et apporter des solutions innovantes.</p>
-
+        <h1 className="text-4xl font-bold">Parcours Informatique</h1>
+        
         {/* Barre de navigation */}
         <nav className="mt-6">
           <ul className="flex justify-center space-x-8">
@@ -17,33 +16,37 @@ export default function Info() {
             <li><a href="#gestion-patrimoine" className="text-indigo-600 hover:text-indigo-800">Patrimoine IT</a></li>
             <li><a href="#support" className="text-indigo-600 hover:text-indigo-800">Support IT</a></li>
             <li><a href="#veille" className="text-indigo-600 hover:text-indigo-800">Veille Technologique</a></li>
-            <li><a href="#projet" className="text-indigo-600 hover:text-indigo-800">Projets</a></li>
+            {/* Bouton pour changer le thème */}
+            <li><ThemeToggle /></li>
           </ul>
         </nav>
-
-        {/* Changer le thème */}
-        <ThemeToggle />
       </header>
 
-      {/* Section 1 : Projets et Réalisations */}
+      {/* Section : Projets et Réalisations */}
       <section id="projets" className="mb-16">
-        <h2 className="text-2xl font-semibold mb-6">Mes Projets Informatique</h2>
+        <h2 className="text-2xl font-semibold mb-6">Mes Projets Informatiques</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Exemple de projet */}
+          
+          {/* Projet : Boîte à Idées Numérique */}
           <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden">
-            <img src="" alt="Projet 1" className="w-full h-48 object-cover" />
+            <img src="/images/fru.webp" alt="Boîte à Idées Numérique" className="w-full h-48 object-cover" />
             <div className="p-6">
-              <h3 className="text-xl font-semibold">Déploiement d'un Serveur Web</h3>
-              <p className="text-gray-500 mt-2">Mise en place d'un serveur Apache sécurisé avec HTTPS.</p>
+              <h3 className="text-xl font-semibold">Boîte à Idées Numérique</h3>
+              <p className="text-gray-500 mt-2">
+                Plateforme collaborative permettant aux utilisateurs de soumettre et voter pour des idées.
+              </p>
               <ul className="mt-4 text-sm">
-                <li>Contexte : Stage en entreprise</li>
-                <li>Technologies : Linux, Apache, Certbot (SSL)</li>
-                <li>Rôle : Configuration, tests de sécurité, documentation</li>
-                <li>Résultat : Serveur web opérationnel et sécurisé</li>
+                <li><strong>Contexte :</strong> Projet personnel</li>
+                <li><strong>Technologies :</strong> Docker, GitLab CI/CD, Express.js, React, TailwindCSS</li>
+                <li><strong>Rôle :</strong> Développement, CI/CD, hébergement</li>
+                <li><strong>Résultat :</strong> Une plateforme fonctionnelle et déployée via Docker</li>
               </ul>
-              <a href="#" className="inline-block mt-4 text-indigo-600 hover:text-indigo-800">Voir le projet</a>
+              <a href="https://github.com/votre-repo" className="inline-block mt-4 text-indigo-600 hover:text-indigo-800">
+                Voir le projet
+              </a>
             </div>
           </div>
+
         </div>
       </section>
 
